@@ -1,0 +1,54 @@
+{
+  "name": "create-solidity-dapp-template",
+  "description": "Solidity dapp template",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pefish/create-solidity-dapp-template.git"
+  },
+  "keywords": [
+    "solidity",
+    "ethereum",
+    "smart",
+    "contracts",
+    "security"
+  ],
+  "author": "Pefish",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pefish/create-solidity-dapp-template/issues"
+  },
+  "homepage": "https://github.com/pefish/create-solidity-dapp-template.git",
+  "scripts": {
+    "build": "make build",
+    "build-sol": "rm -rf build/contracts/* && truffle compile",
+    "build-ts-type": "typechain --target truffle './build/**/*.json'",
+    "build-ts-migration": "tsc",
+    "test": "yarn build && truffle test",
+    "postinstall": "patch-package",
+    "flatten": "node scripts/flattener.js --outputDir full",
+    "deploy-testnet": "yarn build && truffle migrate --network=testnet",
+    "deploy": "yarn build && truffle migrate --network=mainnet"
+  },
+  "dependencies": {
+    "@pefish/js-node-assist": "^2.0.8",
+    "@pefish/solidity-lib": "^0.1.10"
+  },
+  "devDependencies": {
+    "@truffle/hdwallet-provider": "^1.1.0",
+    "@typechain/truffle-v5": "^2.0.2",
+    "@types/chai": "^4.2.12",
+    "@types/mocha": "^8.0.3",
+    "@types/node": "^14.11.2",
+    "patch-package": "^6.2.2",
+    "postinstall-postinstall": "^2.1.0",
+    "truffle": "^5.3.2",
+    "truffle-flattener": "^1.5.0",
+    "truffle-typings": "^1.0.8",
+    "ts-generator": "^0.0.8",
+    "ts-node": "^9.0.0",
+    "typechain": "^2.0.0",
+    "typechain-target-truffle": "^1.0.2",
+    "typescript": "^4.0.3"
+  }
+}

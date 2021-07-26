@@ -1,0 +1,15 @@
+
+
+**/**/node_modules
+
+**/**/migrations/*.js
+**/**/migrations/*.js.map
+
+**/**/types
+
+.vscode/
+.secret
+
+.idea/
+.DS_Store
+build/
